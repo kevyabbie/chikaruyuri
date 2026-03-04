@@ -68,7 +68,7 @@ const staff = [
   {
     id: 6, name: "Kevy", tag: "...", role: "admin", roleLabel: "Kevibanan",
     emoji: "L", avatarColor: "#3d5a80", bannerColor: "#1a2840",
-    avatarImg: "kevy/kevy.png", bannerImg: "nigh.png",
+    avatarImg: "Kevy/kevy.png", bannerImg: "nigh.png",
     status: "dnd",
     customStatus: { emoji: "", text: "hi" },
     bio: "call me by anything.\n If i go offline for a long period of time, dont overthink it too much its gonna hurt u.\n\n\n &lt;/!\\&gt; <a href='https://secreto.site/azzdz7'>https://secreto.site/azzdz7</a>\n &lt;/!\\&gt; <a href='https://absolutekevy.carrd.co/'>https://absolutekevy.carrd.co/</a>",
@@ -123,7 +123,7 @@ const staff = [
   {
     id: 11, name: "S0m3tim3", tag: "#0393", role: "mod", roleLabel: "Devesto",
     emoji: "S", avatarColor: "#ff6f61", bannerColor: "#ffffff",
-    avatarImg: "devesto/devesto.png", bannerImg: "devesto/devestobanner.png",
+    avatarImg: "Devesto/devesto.png", bannerImg: "devesto/devestobanner.png",
     status: "online",
     customStatus: { emoji: "", text: "..." },
     bio: "𝓐𝓫𝓸𝓾𝓽 𝓶𝓮\n 𝓝𝓪𝓶𝓮 : 𝓓𝓮𝓿𝓮𝓼𝓽𝓸\n 𝓐𝓰𝓮 : 16 (𝓫𝓸𝓻𝓷 𝓲𝓷 13 𝓙𝓾𝓵𝔂)\n 𝓟𝓻𝓸𝓷𝓸𝓾𝓷𝓼 : 𝓱𝓮/𝓱𝓲𝓶/𝓽𝓱𝓮𝔂/𝓽𝓱𝓮𝓶\n 𝓢𝓮𝓷𝓼𝓾𝓪𝓵𝓲𝓽𝔂 : 𝓷𝓸𝓷𝓫𝓲𝓷𝓪𝓻𝔂 𝓫𝓲𝓼𝓮𝔁𝓾𝓪𝓵",
@@ -614,3 +614,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
