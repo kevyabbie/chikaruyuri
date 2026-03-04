@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A dream</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="seek.css" />
+</head>
+<body>
+
+<div class="server-rail">
+  <div class="server-icon active" title="🌅☀꧁☆☂!- ChikaruYuri Company-!☂ ✩꧂☀🌅">
+    <img src="servericon.png" alt="" />
+  </div>
+  <div class="server-divider"></div>
+  <div class="server-icon add-btn" title="Add server">.</div>
+</div>
+
+  <div class="sidebar">
+    <div class="server-header">
+      <span class="sh-icon"></span>
+      ChikaruYuri Company-!☂☀🌅
+      <span class="arrow">▾</span>
+    </div>
+
+    <div class="channels-list">
+
+      <div class="channel-category">▸ Information</div>
+      <div class="channel-item active" data-channel="staff-directory" data-desc="">
+        <span class="ch-icon">#</span>staffs
+      </div>
+      <div class="channel-item" data-channel="diary" data-desc="">
+        <span class="ch-icon">#</span>diary
+      </div>
+      <div class="channel-item" data-channel="my-personal-life" data-desc="my personal life">
+        <span class="ch-icon">#</span>my-personal-life
+      </div>
+
+      <div class="channel-category">▸ Yippity Yap</div>
+      <div class="channel-item" data-channel="silly-channel" data-desc="about us">
+        <span class="ch-icon">#</span>silly-channel
+      </div>
+    </div>  
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="channel-header">
+      <span class="ch-header-hash" id="header-hash">#</span>
+      <div class="ch-name" id="header-channel-name">staffs</div>
+      <div class="ch-sep"></div>
+      <div class="ch-desc" id="header-channel-desc">Our staffs list</div>
+      <div class="header-actions">
+      </div>
+    </div>
+
+    <div class="content-area" id="content-staff-directory">
+      <div class="messages-scroll">
+        <div class="chat-welcome">
+          <div class="chat-welcome-title">Welcome to <strong>#staffs</strong></div>
+          <div class="chat-welcome-sub"></div>
+        </div>
+        <div class="chat-date-divider"><span>Today</span></div>
+        <div id="block-owner"></div>
+        <div id="block-lifeguard"></div>
+        <div id="block-headadmin"></div>
+        <div id="block-admin"></div>
+        <div id="block-headmod"></div>
+        <div id="block-mod"></div>
+      </div>
+      <div class="chat-input-wrap">
+        <div class="chat-input-box">
+          <button class="chat-input-plus">+</button>
+          <span class="chat-input-placeholder">Message #staffs</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-area hidden" id="content-diary">
+      <div class="messages-scroll">
+        <div class="chat-welcome">
+          <div class="chat-welcome-title">Welcome to <strong>#diary</strong></div>
+          <div class="chat-welcome-sub">i will post my day here, but mostly ill update every Tuesday, Thursday, and Friday. </div>
+        </div>
+        <div class="chat-date-divider"><span>Today</span></div>
+      </div>
+      <div class="chat-input-wrap">
+        <div class="chat-input-box locked">have a good day stranger</div>
+      </div>
+    </div>
+
+    <div class="content-area hidden" id="content-my-personal-life">
+      <div class="messages-scroll">
+        <div class="chat-welcome">
+          <div class="chat-welcome-title">Welcome to <strong>#my-personal-life</strong></div>
+          <div class="chat-welcome-sub"></div>
+        </div>
+        <div class="chat-date-divider"><span>Today</span></div>
+      </div>
+      <div class="chat-input-wrap">
+        <div class="chat-input-box locked">.</div>
+      </div>
+    </div>
+
+    <div class="content-area hidden" id="content-silly-channel">
+      <div class="messages-scroll">
+        <div class="chat-welcome">
+          <div class="chat-welcome-title">Welcome to <strong>#silly-channel</strong></div>
+          <div class="chat-welcome-sub">i wish for the best for myself.</div>
+        </div>
+        <div class="chat-date-divider"><span>Today</span></div>
+      </div>
+      <div class="chat-input-wrap">
+        <div class="chat-input-box">
+          <button class="chat-input-plus">+</button>
+          <span class="chat-input-placeholder">Message #silly-channel</span>
+          <div class="chat-input-tools">
+            <button class="icon-btn"></button>
+            <button class="icon-btn"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="member-list" id="member-list"></div>
+
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+
+      <div class="modal-banner" id="modal-banner">
+        <img class="modal-banner-img hidden" id="modal-banner-img" alt="" />
+        <button class="modal-close" id="modal-close-btn">&#x2715;</button>
+      </div>
+
+      <div class="modal-avatar-wrap">
+        <div class="modal-avatar" id="modal-avatar">
+          <img class="modal-avatar-img hidden" id="modal-avatar-img" alt="" />
+          <span id="modal-avatar-letter"></span>
+        </div>
+        <div class="modal-avatar-status" id="modal-avatar-status"></div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-name"  id="modal-name"></div>
+        <div class="modal-tag"   id="modal-tag"></div>
+        <div class="modal-custom-status" id="modal-custom-status"></div>
+        <div class="modal-roles" id="modal-roles"></div>
+        <div class="modal-divider"></div>
+        <div class="modal-section-title">About Me</div>
+        <div class="modal-bio"   id="modal-bio"></div>
+        <div class="modal-perms" id="modal-perms"></div>
+        <div class="modal-spotify" id="modal-spotify" style="display:none"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="help.js"></script>
+</body>
+
+</html>
