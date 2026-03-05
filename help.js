@@ -588,8 +588,8 @@ const LOUNGE_CONVO = [
   { staffId: 6, displayName: "Kevy", time: "???", text: "im tired and everything is making me anxious" },
 ];
 
-function buildSillyChannel() {
-  const scroll = document.querySelector('#content-silly-channel .messages-scroll');
+function buildTerakhirkali() {
+  const scroll = document.querySelector('#content-Terakhir-kali .messages-scroll');
   if (!scroll) return;
 
   const divider = scroll.querySelector('.chat-date-divider');
@@ -616,3 +616,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
