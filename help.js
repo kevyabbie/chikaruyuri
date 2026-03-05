@@ -183,7 +183,7 @@ const staff = [
     customStatus: { emoji: "", text: "" },
     bio: "You're the real me!",
     joined: "",
-    perms: ["Kevy's Notes: even tho youre just my alt but i treat you like someone important in my life.", "but ill be real though if theres someone out there that has the same personality as me", "i would crave for their attention and want to be their friend so bad not gonna lie."],
+    perms: ["Kevy's Notes: even tho youre just my alt but i treat you like someone important in my life.", "but ill be real though if theres someone out there that has the same personality as me", "i would crave for their attention and want to be their friend so bad not gonna lie.", "please be real please please please please please please please please please please please please please please please please", "is this my curse? to be alone forever? if so then be it im gonna die alone anyway"],
     spotify: null
   },
 ];
@@ -620,6 +620,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
 
 
