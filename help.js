@@ -548,9 +548,6 @@ function buildDiary() {
   });
 }
 
-// ── #my-personal-life builder ────────────────────────────────────────────────
-// Works exactly like buildDiary() — reads MY_PERSONAL_LIFE_ENTRIES and renders
-// date dividers + message groups into the #content-my-personal-life scroll area.
 function buildMyPersonalLife() {
   const scroll = document.querySelector('#content-my-personal-life .messages-scroll');
   if (!scroll) return;
@@ -571,7 +568,6 @@ function buildMyPersonalLife() {
     });
   });
 }
-// ─────────────────────────────────────────────────────────────────────────────
 
 
 const LOUNGE_CONVO = [
@@ -620,8 +616,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
-
-
-
-
-
