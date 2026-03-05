@@ -544,16 +544,13 @@ button { cursor: pointer; font-family: inherit; }
 .modal-bio a:hover { text-decoration: underline; }
 
 
-
 @media (max-width: 768px) {
 
   body { position: relative; overflow: hidden; }
 
-
   .server-rail,
   .sidebar,
   .member-list { display: none !important; }
-
 
   .main {
     width: 100%;
@@ -563,7 +560,6 @@ button { cursor: pointer; font-family: inherit; }
     position: relative;
   }
 
- 
   .content-area { padding-bottom: 52px; }
 
   .channel-header { padding: 0 12px; }
@@ -593,7 +589,6 @@ button { cursor: pointer; font-family: inherit; }
     overflow: hidden;
   }
 
-
   #drawer-channels {
     left: 0;
     transform: translateX(-100%);
@@ -601,7 +596,6 @@ button { cursor: pointer; font-family: inherit; }
     box-shadow: 4px 0 24px rgba(0,0,0,0.5);
   }
   #drawer-channels.open { transform: translateX(0); }
-
 
   #drawer-members {
     right: 0;
@@ -645,7 +639,6 @@ button { cursor: pointer; font-family: inherit; }
   }
   .drawer-close:hover { background: var(--bg-5); color: var(--text-1); }
 
-
   #drawer-channels .drawer-server-header {
     height: 48px;
     padding: 0 16px;
@@ -668,7 +661,6 @@ button { cursor: pointer; font-family: inherit; }
     padding-bottom: 16px;
   }
 
-
   #drawer-members-inner {
     flex: 1;
     overflow-y: auto;
@@ -689,7 +681,10 @@ button { cursor: pointer; font-family: inherit; }
     opacity: 1;
     pointer-events: all;
   }
-
+  body.modal-open .mobile-backdrop {
+    pointer-events: none !important;
+    z-index: 1 !important;
+  }
 
   .mobile-fab-bar {
     position: fixed;
@@ -724,7 +719,6 @@ button { cursor: pointer; font-family: inherit; }
   .mobile-fab.active,
   .mobile-fab:hover         { background: var(--accent); color: #fff; border-color: transparent; }
 
-
   .mobile-fab-center {
     display: flex;
     flex-direction: column;
@@ -749,8 +743,10 @@ button { cursor: pointer; font-family: inherit; }
     max-width: 160px;
   }
 
-
-  .modal-overlay { align-items: flex-end; }
+  .modal-overlay {
+    align-items: flex-end;
+    z-index: 900;
+  }
   .modal {
     width: 100%;
     max-width: 100%;
@@ -759,8 +755,15 @@ button { cursor: pointer; font-family: inherit; }
     transform: translateY(100%);
   }
   .modal-overlay.open .modal { transform: translateY(0); }
-}
 
+  .modal-close {
+    z-index: 10;
+    min-width: 40px;
+    min-height: 40px;
+    width: 40px;
+    height: 40px;
+  }
+}
 
 @media (max-width: 400px) {
   .embed-staff-card { width: 100%; max-width: 100%; }
