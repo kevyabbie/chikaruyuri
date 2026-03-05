@@ -582,7 +582,6 @@ const LOUNGE_CONVO = [
   { staffId: 12, displayName: "Zeen", time: "10:13 AM", text: "goodluck" },
   { staffId: 13, displayName: "Ray/Ark", time: "10:14 AM", text: "goodluck" },
   { staffId: 14, displayName: "Randy", time: "10:15 AM", text: "goodluck" },
-  { staffId: 15, displayName: "Matty Matteo", time: "10:16 AM", text: "goodluck" },
   { staffId: 16, displayName: "Abbie", time: "10:17 AM", text: "goodluck kevy, you will eventually find 'me'." },
   { staffId: 6, displayName: "Kevy", time: "???", text: "maybe in another universe, i doubt that i will get something from this universe" },
   { staffId: 6, displayName: "Kevy", time: "???", text: "im tired and everything is making me anxious" },
@@ -616,5 +615,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
 
