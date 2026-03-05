@@ -238,7 +238,7 @@ const MY_PERSONAL_LIFE_ENTRIES = [
   {
     date: "March 5, 2026",
     messages: [
-      { staffId: 6, displayName: "Kevy", time: "3:12 AM", text: "hii namaku kevin, aku lahir pada tanggal 24 Juni 2008 di Jawa Timur aku seorang adik kandung dari 1 saudara laki-laki, aku dulunya dikenal sebagai seorang anak yang berbakat yaa dulunya aku tertarik sama yang namanya programming tapi tau enggak semakin aku kenal dekat dengan yang namanya programming justru itu yang akan ngancurin hidupku?" },
+      { staffId: 6, displayName: "Kevy", time: "3:12 AM", text: "hii namaku kevin, aku lahir pada tanggal 24 Juni 2008 di Jawa Timur aku seorang adik kandung dari 1 saudara laki-laki(anak bungsu lah), aku dulunya dikenal sebagai seorang anak yang berbakat yaa dulunya aku tertarik sama yang namanya programming tapi tau enggak semakin aku kenal dekat dengan yang namanya programming justru itu yang akan ngancurin hidupku?" },
       { staffId: 6, displayName: "Kevy", time: "3:16 AM", text: "aku sudah tertarik di bidang ini saat aku masih SMP itu sekitar 3 tahun yang lalu 2023. saat itu TIK / Informatika di sekolahku jam pelajarannya terlalu sedikit bisa di bilang seperti 1-2 jam pelajaran per minggu (lumayan sedikit) dan itu adalah salah satu mata pelajaran favorit ku 'dulu'" },
       { staffId: 6, displayName: "Kevy", time: "3:20 AM", text: "tapi pas aku SMK (saat ini) aku ambil jurusan TKJ (jelas dong aku kan emang suka dari awal) tapi ya itu bukan seperti yang aku harapkan, dan kebetulan di TKJ ku ini ada yang namanya bidang lomba dan ada 2 bidang lomba 1 Cybersecurity (seperti menjaga webserver dari serangan) dan ITNSA (yang bertugas untuk membangun jaringan komputer seperti arsitek di dunia nyata tapi di komputer)" },
       { staffId: 6, displayName: "Kevy", time: "3:26 AM", text: "dan pada 2024 akhir tepatnya di september aku masuk ke bidang Cybersecurity (karena ya aku dipilih) aku awalnya meng iyakan tawaran itu dan mungkin bisa mendapatkan ilmu baru tapi ya pas masuk, aku tidak di beri materi apa-apa hanya bermodalkan wifi aku disuruh cari materi sendiri dan di pelajari dan aku juga harus ikut serta dalam lomba (kalau di cybersecurity nama lomba nya CTF kalo di aku si ya) dan cybersecurity harus ada 2 orang yang ikut lomba, dan karena sekolah ku itu jurusannya banyak ada yang namanya TKJ-1 dan TKJ-2 saat itu ada 4 anak dari TKJ-2 yang ikut bidang lomba, 3 ITNSA dan 1 Cybersecurity, aku saat itu di pasangkan oleh TKJ-2 karenakan di TKJ-1 kelas ku dulu masih belum ada yang masuk di bidang ini, singkat cerita CTF nasional pada waktu itu CTF miliknya polisi kalau gasalah oktober 2024, dan H-1 sebelum CTF dimulai dia (partnerku yang dari TKJ-2) mutusin buat ngundurin diri dari lomba dan untuk penggantinya adalah 2 anak dari ITNSA (TKJ-2)"},
@@ -620,5 +620,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
 
