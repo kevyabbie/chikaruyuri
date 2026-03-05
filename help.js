@@ -225,12 +225,18 @@ const DIARY_ENTRIES = [
       { staffId: 6, displayName: "Kevy", time: "8:49 AM", text: "okaaaaaaaaay" },
     ]
   },
+  {
+    date: "March 5, 2026",
+    messages: [
+      { staffId: 6, displayName: "Kevy", time: "11:20 AM", text: "bodoamat gw ga masuk besok anjing" },
+    ]
+  },
 ];
 
 
 const MY_PERSONAL_LIFE_ENTRIES = [
   {
-    date: "March 4, 2026",
+    date: "March 5, 2026",
     messages: [
       { staffId: 6, displayName: "Kevy", time: "3:12 AM", text: "hii namaku kevin, aku lahir pada tanggal 24 Juni 2008 di Jawa Timur aku seorang adik kandung dari 1 saudara laki-laki, aku dulunya dikenal sebagai seorang anak yang berbakat yaa dulunya aku tertarik sama yang namanya programming tapi tau enggak semakin aku kenal dekat dengan yang namanya programming justru itu yang akan ngancurin hidupku?" },
       { staffId: 6, displayName: "Kevy", time: "3:16 AM", text: "aku sudah tertarik di bidang ini saat aku masih SMP itu sekitar 3 tahun yang lalu 2023. saat itu TIK / Informatika di sekolahku jam pelajarannya terlalu sedikit bisa di bilang seperti 1-2 jam pelajaran per minggu (lumayan sedikit) dan itu adalah salah satu mata pelajaran favorit ku 'dulu'" },
@@ -614,4 +620,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
