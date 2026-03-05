@@ -35,7 +35,7 @@ const staff = [
   {
     id: 3, name: "Finn", tag: "#369", role: "admin", roleLabel: "Finnana",
     emoji: "R", avatarColor: "#9c27b0", bannerColor: "#ffffff",
-    avatarImg: "finn/finn.png", bannerImg: null,
+    avatarImg: "Finn/finn.png", bannerImg: null,
     status: "online",
     customStatus: { emoji: "", text: "..." },
     bio: "∆☠️∆€.*Ficthos/Yellow Angel\n {¥$} Food/Drinks lover (I love Wine. I haved taste it for once)\n |•||•|Age:Eleven y/o\n •√•` multifandom •√•\n MBTI:ESFP AND ENFP\n Brother:Marvie\n Sister:Riee,Alena",
@@ -79,7 +79,7 @@ const staff = [
   {
     id: 7, name: "Wifies", tag: "#0521", role: "headmod", roleLabel: "Yoxxy",
     emoji: "L", avatarColor: "#3d5a80", bannerColor: "#ffffff",
-    avatarImg: "yoxxy/yoxxy.png", bannerImg: null,
+    avatarImg: "Yoxxy/yoxxy.png", bannerImg: null,
     status: "online",
     customStatus: { emoji: "", text: "..." },
     bio: "Sleep.",
@@ -112,7 +112,7 @@ const staff = [
   {
     id: 10, name: "AbsoluteZach", tag: "#093", role: "mod", roleLabel: "Zach",
     emoji: "T", avatarColor: "#ff6f61", bannerColor: "#ffffff",
-    avatarImg: "zach/zach.png", bannerImg: "zach/zachbanner.png",
+    avatarImg: "Zach/zach.png", bannerImg: "zach/zachbanner.png",
     status: "online",
     customStatus: { emoji: "", text: "The Face of Absolute." },
     bio: "To achieve my goal, I need to do it from scratch... It\n might be tough but as long my determination flow into\n me, I wont stop until I get What I want",
@@ -134,7 +134,7 @@ const staff = [
   {
     id: 12, name: "Zeen", tag: "#0009", role: "mod", roleLabel: "Zeen",
     emoji: "S", avatarColor: "#ff6f61", bannerColor: "#ffffff",
-    avatarImg: "zeen/zeen.png", bannerImg: "zeen/zeenbanner.png",
+    avatarImg: "Zeen/zeen.png", bannerImg: "zeen/zeenbanner.png",
     status: "idle",
     customStatus: { emoji: "", text: "..." },
     bio: "Born at 31 July",
@@ -620,6 +620,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
 
 
