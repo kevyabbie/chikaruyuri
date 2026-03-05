@@ -607,7 +607,7 @@ document.addEventListener('DOMContentLoaded', () => {
   buildMemberList();
   buildDiary();
   buildMyPersonalLife();
-  buildSillyChannel();
+  buildTerakhirkali();
   initChannelSwitcher();
   initModal();
 
@@ -616,4 +616,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
 
