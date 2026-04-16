@@ -497,7 +497,6 @@ button { cursor: pointer; font-family: inherit; }
   display: block;
 }
 
-/* servericon */
 .server-icon img {
   width: 100%;
   height: 100%;
@@ -505,11 +504,37 @@ button { cursor: pointer; font-family: inherit; }
   border-radius: inherit;
 }
 
+
 .msg-group {
+  position: relative;
   display: flex; gap: 14px; padding: 4px 16px 2px;
   border-radius: 4px; transition: background .1s; margin-bottom: 6px;
 }
 .msg-group:hover { background: rgba(0,0,0,.06); }
+
+.msg-grouped {
+  padding-left: 70px;
+  gap: 0;
+  margin-bottom: 1px;
+  align-items: flex-start;
+}
+
+.msg-grouped-time {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: var(--text-muted);
+  opacity: 0;
+  width: 40px;
+  text-align: right;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity .1s;
+}
+.msg-group:hover .msg-grouped-time { opacity: 1; }
+
 .msg-avatar {
   width: 40px; height: 40px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
@@ -763,6 +788,8 @@ button { cursor: pointer; font-family: inherit; }
     width: 40px;
     height: 40px;
   }
+
+  .msg-grouped { padding-left: 54px; }
 }
 
 @media (max-width: 400px) {
