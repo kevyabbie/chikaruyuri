@@ -231,8 +231,20 @@ const DIARY_ENTRIES = [
       { staffId: 6, displayName: "Kevy", time: "11:20 AM", text: "bodoamat gw ga masuk besok anjing" },
     ]
   },
+  {
+    date: "April 16, 2026",
+    messages: [
+      { staffId: 6, displayName: "Kevy", time: "7:52 AM", text: "udah lama juga ya aku nggak cerita disini" },
+      { staffId: 6, displayName: "Kevy", time: "7:52 AM", text: "tapi ya sedikit demi sedikit aku udah mulai bisa keluar" },
+      { staffId: 6, displayName: "Kevy", time: "7:52 AM", text: "aku hanya di kasih waktu sampe 3 bulan kedepan (sekarang 2 bulan) dari Maret ke Juni ulang tahunku " },
+      { staffId: 6, displayName: "Kevy", time: "7:52 AM", text: "aku cuma ingin ngebuktiin aku bisa tanpa harus belajar Informatika bullshit ini " },
+      { staffId: 6, displayName: "Kevy", time: "7:52 AM", text: "dan yang aku butuhkan itu uang, tapi aku sedikit bisa ngerecover dengan cara aku trading di forex" },
+      { staffId: 6, displayName: "Kevy", time: "7:52 AM", text: "iya kayak mustahil tapi aku udah 3 tahun di industri ini hanya aja kekurangan modal di awal jadi aku ga lanjutin, (dan di april awal sampe sekarang aku bisa 100$ -> 800$)" },
+      { staffId: 6, displayName: "Kevy", time: "7:52 AM", text: "aku ga nyeritain ini ke siapa siapa bahkan ke kalian kalo kalian baca ini C,M,Y,A,R,Z,D, ya aku masih insecure sama diriku sendiri karena hasilnya emang masih kecil jadi aku tunggu jadi gede dulu baru aku mau ceritain" },
+      { staffId: 6, displayName: "Kevy", time: "7:52 AM", text: "aku disini gamau flexing tapi kalo aku di kemudian hari ga bisa survive atau 3 bulan itu ga sesuai sama keinginan aku biarkan ini jadi arsip kalo aku udah mencoba." },
+    ]
+  },
 ];
-
 
 const MY_PERSONAL_LIFE_ENTRIES = [
   {
@@ -248,16 +260,37 @@ const MY_PERSONAL_LIFE_ENTRIES = [
       { staffId: 6, displayName: "Kevy", time: "3:49 AM", text: "aku selalu ingetin mereka murid murid baru dari TKJ untuk jangan masuk bidang lomba, mending kalian nikmatin masa sekolah dengan rame rame daripada sendirian di ruangan sempit." },
       { staffId: 6, displayName: "Kevy", time: "3:52 AM", text: "keseharianku sekarang udah gaada warna lagi, aku udah mati dari lama tapi tubuhku masih maksain dan mungkin nanti atau kedepannya aku bisa istirahat tenang di tempat lain." },
       { staffId: 6, displayName: "Kevy", time: "3:49 AM", text: "but for now goodluck to me if youre too tired doing this remember that you still got a cutter in your drawer use it as a comfort, cut it deep if you had enough.. goodluck.... -2026 march 4" },
-
     ]
   },
 ];
 
+const LOUNGE_CONVO = [
+  { staffId: 0,  displayName: "Chikamon",      time: "10:01 AM", text: "goodluck" },
+  { staffId: 1,  displayName: "matcha4latte",  time: "10:02 AM", text: "goodluck" },
+  { staffId: 2,  displayName: "Yerpiro",       time: "10:03 AM", text: "goodluck" },
+  { staffId: 3,  displayName: "Finn",          time: "10:04 AM", text: "goodluck" },
+  { staffId: 4,  displayName: "ManagerAzka:p", time: "10:05 AM", text: "goodluck" },
+  { staffId: 7,  displayName: "Wifies",        time: "10:08 AM", text: "goodluck" },
+  { staffId: 10, displayName: "AbsoluteZach",  time: "10:11 AM", text: "goodluck" },
+  { staffId: 11, displayName: "S0m3tim3",      time: "10:12 AM", text: "goodluck" },
+  { staffId: 12, displayName: "Zeen",          time: "10:13 AM", text: "goodluck" },
+  { staffId: 13, displayName: "Ray/Ark",       time: "10:14 AM", text: "goodluck" },
+  { staffId: 14, displayName: "Randy",         time: "10:15 AM", text: "goodluck" },
+  { staffId: 15, displayName: "Matty Matteo",  time: "10:16 AM", text: "goodluck" },
+  { staffId: 16, displayName: "Abbie",         time: "10:17 AM", text: "goodluck kevy, you will eventually find 'me'." },
+  { staffId: 6,  displayName: "Kevy",          time: "???",      text: "maybe in another universe, i doubt that i will get something from this universe" },
+  { staffId: 6,  displayName: "Kevy",          time: "???",      text: "im tired and everything is making me anxious" },
+];
 
+
+// ─── helpers ────────────────────────────────────────────────────────────────
+
+function isGrouped(prev, curr) {
+  return prev && prev.staffId === curr.staffId && prev.time === curr.time;
+}
 
 function buildSpotifyEmbed(url) {
   if (!url) return '';
-
   let trackId = null;
   const webMatch = url.match(/open\.spotify\.com\/track\/([A-Za-z0-9]+)/);
   if (webMatch) trackId = webMatch[1];
@@ -266,9 +299,7 @@ function buildSpotifyEmbed(url) {
     if (uriMatch) trackId = uriMatch[1];
   }
   if (!trackId) return '';
-
   const randomStart = Math.floor(Math.random() * 121);
-
   return `
     <div class="modal-spotify-wrap">
       <div class="modal-spotify-label">
@@ -278,9 +309,7 @@ function buildSpotifyEmbed(url) {
       <iframe
         class="spotify-embed"
         src="https://open.spotify.com/embed/track/${trackId}?utm_source=generator&theme=0&start=${randomStart}"
-        width="100%"
-        height="80"
-        frameborder="0"
+        width="100%" height="80" frameborder="0"
         allowfullscreen=""
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy">
@@ -288,30 +317,58 @@ function buildSpotifyEmbed(url) {
     </div>`;
 }
 
-function initChannelSwitcher() {
-  const items = document.querySelectorAll('.channel-item[data-channel]');
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      items.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-      const badge = item.querySelector('.badge');
-      if (badge) badge.remove();
-      const ch    = item.dataset.channel;
-      const desc  = item.dataset.desc || '';
-      const voice = item.querySelector('.ch-icon.voice');
-      document.getElementById('header-hash').textContent         = voice ? '🔊' : '#';
-      document.getElementById('header-channel-name').textContent = ch;
-      document.getElementById('header-channel-desc').textContent = desc;
-      document.querySelectorAll('.content-area').forEach(p => p.classList.add('hidden'));
-      const panel = document.getElementById('content-' + ch);
-      if (panel) {
-        panel.classList.remove('hidden');
-        const scroll = panel.querySelector('.messages-scroll');
-        if (scroll) scroll.scrollTop = scroll.scrollHeight;
-      }
-    });
-  });
+
+
+const ROLE_COLOR_CLASS = {
+  owner: "owner-color", lifeguard: "lifeguard-color", headadmin: "headadmin-color",
+  admin: "admin-color", headmod: "headmod-color", mod: "mod-color", laststraw: "laststraw-color",
+};
+const ROLE_TAG_CLASS = {
+  owner: "owner-tag", lifeguard: "lifeguard-tag", headadmin: "headadmin-tag",
+  admin: "admin-tag", headmod: "headmod-tag", mod: "mod-tag", laststraw: "laststraw-tag",
+};
+
+function makeMsgGroup(msg) {
+  const s = staff.find(m => m.id === msg.staffId);
+  if (!s) return null;
+
+  const roleColorClass = ROLE_COLOR_CLASS[s.role] || '';
+  const roleTagClass   = ROLE_TAG_CLASS[s.role]   || '';
+  const rainbowClass   = s.id === 6 ? ' rainbow' : '';
+
+  let avatarHTML;
+  if (s.avatarImg) {
+    avatarHTML = `<div class="msg-avatar" style="background:transparent;padding:0;overflow:hidden">
+      <img src="${s.avatarImg}" alt="${msg.displayName}" style="width:100%;height:100%;object-fit:cover;border-radius:50%" />
+    </div>`;
+  } else {
+    avatarHTML = `<div class="msg-avatar" style="background:${s.avatarColor}">${s.emoji}</div>`;
+  }
+
+  const group = document.createElement('div');
+  group.className = 'msg-group';
+  group.innerHTML = `
+    ${avatarHTML}
+    <div class="msg-right">
+      <div class="msg-header">
+        <span class="msg-author ${roleColorClass}${rainbowClass}">${msg.displayName}</span>
+        <span class="msg-role-tag ${roleTagClass}${rainbowClass}">${s.roleLabel}</span>
+        <span class="msg-time">${msg.time}</span>
+      </div>
+      <div class="msg-content">${msg.text}</div>
+    </div>`;
+  return group;
 }
+
+function makeGroupedMsg(msg) {
+  const el = document.createElement('div');
+  el.className = 'msg-group msg-grouped';
+  el.innerHTML = `
+    <div class="msg-grouped-time">${msg.time}</div>
+    <div class="msg-content">${msg.text}</div>`;
+  return el;
+}
+
 
 
 function buildChatEmbeds() {
@@ -377,7 +434,6 @@ function buildChatEmbeds() {
   });
 }
 
-
 function buildMemberList() {
   const groups = {};
   staff.forEach(s => { if (!groups[s.role]) groups[s.role] = []; groups[s.role].push(s); });
@@ -416,6 +472,69 @@ function buildMemberList() {
     row.addEventListener('click', () => openProfile(parseInt(row.dataset.id)));
   });
 }
+
+function buildDiary() {
+  const scroll = document.querySelector('#content-diary .messages-scroll');
+  if (!scroll) return;
+
+  const welcome = scroll.querySelector('.chat-welcome');
+  let el = welcome ? welcome.nextSibling : scroll.firstChild;
+  while (el) { const next = el.nextSibling; scroll.removeChild(el); el = next; }
+
+  DIARY_ENTRIES.forEach(entry => {
+    const divider = document.createElement('div');
+    divider.className = 'chat-date-divider';
+    divider.innerHTML = `<span>${entry.date}</span>`;
+    scroll.appendChild(divider);
+
+    entry.messages.forEach((msg, i) => {
+      const prev = entry.messages[i - 1];
+      const grouped = isGrouped(prev, msg);
+      const group = grouped ? makeGroupedMsg(msg) : makeMsgGroup(msg);
+      if (group) scroll.appendChild(group);
+    });
+  });
+}
+
+function buildMyPersonalLife() {
+  const scroll = document.querySelector('#content-my-personal-life .messages-scroll');
+  if (!scroll) return;
+
+  const welcome = scroll.querySelector('.chat-welcome');
+  let el = welcome ? welcome.nextSibling : scroll.firstChild;
+  while (el) { const next = el.nextSibling; scroll.removeChild(el); el = next; }
+
+  MY_PERSONAL_LIFE_ENTRIES.forEach(entry => {
+    const divider = document.createElement('div');
+    divider.className = 'chat-date-divider';
+    divider.innerHTML = `<span>${entry.date}</span>`;
+    scroll.appendChild(divider);
+
+    entry.messages.forEach((msg, i) => {
+      const prev = entry.messages[i - 1];
+      const grouped = isGrouped(prev, msg);
+      const group = grouped ? makeGroupedMsg(msg) : makeMsgGroup(msg);
+      if (group) scroll.appendChild(group);
+    });
+  });
+}
+
+function buildSillyChannel() {
+  const scroll = document.querySelector('#content-Terakhir-kali .messages-scroll');
+  if (!scroll) return;
+
+  const divider = scroll.querySelector('.chat-date-divider');
+  let el = divider ? divider.nextSibling : null;
+  while (el) { const next = el.nextSibling; scroll.removeChild(el); el = next; }
+
+  LOUNGE_CONVO.forEach((msg, i) => {
+    const prev = LOUNGE_CONVO[i - 1];
+    const grouped = isGrouped(prev, msg);
+    const group = grouped ? makeGroupedMsg(msg) : makeMsgGroup(msg);
+    if (group) scroll.appendChild(group);
+  });
+}
+
 
 
 function openProfile(id) {
@@ -494,115 +613,33 @@ function initModal() {
 }
 
 
-const ROLE_COLOR_CLASS = { owner: "owner-color", lifeguard: "lifeguard-color", headadmin: "headadmin-color", admin: "admin-color", headmod: "headmod-color", mod: "mod-color", laststraw: "laststraw-color", };
-const ROLE_TAG_CLASS   = { owner: "owner-tag",   lifeguard: "lifeguard-tag",   headadmin: "headadmin-tag",   admin: "admin-tag",   headmod: "headmod-tag",   mod: "mod-tag",   laststraw: "laststraw-tag", };
 
-function makeMsgGroup(msg) {
-  const s = staff.find(m => m.id === msg.staffId);
-  if (!s) return null;
-
-  const roleColorClass = ROLE_COLOR_CLASS[s.role] || '';
-  const roleTagClass   = ROLE_TAG_CLASS[s.role]   || '';
-  const rainbowClass   = s.id === 6 ? ' rainbow' : '';
-
-  let avatarHTML;
-  if (s.avatarImg) {
-    avatarHTML = `<div class="msg-avatar" style="background:transparent;padding:0;overflow:hidden">
-      <img src="${s.avatarImg}" alt="${msg.displayName}" style="width:100%;height:100%;object-fit:cover;border-radius:50%" />
-    </div>`;
-  } else {
-    avatarHTML = `<div class="msg-avatar" style="background:${s.avatarColor}">${s.emoji}</div>`;
-  }
-
-  const group = document.createElement('div');
-  group.className = 'msg-group';
-  group.innerHTML = `
-    ${avatarHTML}
-    <div class="msg-right">
-      <div class="msg-header">
-        <span class="msg-author ${roleColorClass}${rainbowClass}">${msg.displayName}</span>
-        <span class="msg-role-tag ${roleTagClass}${rainbowClass}">${s.roleLabel}</span>
-        <span class="msg-time">${msg.time}</span>
-      </div>
-      <div class="msg-content">${msg.text}</div>
-    </div>`;
-  return group;
-}
-
-function buildDiary() {
-  const scroll = document.querySelector('#content-diary .messages-scroll');
-  if (!scroll) return;
-
-  const welcome = scroll.querySelector('.chat-welcome');
-  let el = welcome ? welcome.nextSibling : scroll.firstChild;
-  while (el) { const next = el.nextSibling; scroll.removeChild(el); el = next; }
-
-  DIARY_ENTRIES.forEach(entry => {
-    const divider = document.createElement('div');
-    divider.className = 'chat-date-divider';
-    divider.innerHTML = `<span>${entry.date}</span>`;
-    scroll.appendChild(divider);
-
-    entry.messages.forEach(msg => {
-      const group = makeMsgGroup(msg);
-      if (group) scroll.appendChild(group);
-    });
-  });
-}
-
-function buildMyPersonalLife() {
-  const scroll = document.querySelector('#content-my-personal-life .messages-scroll');
-  if (!scroll) return;
-
-  const welcome = scroll.querySelector('.chat-welcome');
-  let el = welcome ? welcome.nextSibling : scroll.firstChild;
-  while (el) { const next = el.nextSibling; scroll.removeChild(el); el = next; }
-
-  MY_PERSONAL_LIFE_ENTRIES.forEach(entry => {
-    const divider = document.createElement('div');
-    divider.className = 'chat-date-divider';
-    divider.innerHTML = `<span>${entry.date}</span>`;
-    scroll.appendChild(divider);
-
-    entry.messages.forEach(msg => {
-      const group = makeMsgGroup(msg);
-      if (group) scroll.appendChild(group);
+function initChannelSwitcher() {
+  const items = document.querySelectorAll('.channel-item[data-channel]');
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      items.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+      const badge = item.querySelector('.badge');
+      if (badge) badge.remove();
+      const ch    = item.dataset.channel;
+      const desc  = item.dataset.desc || '';
+      const voice = item.querySelector('.ch-icon.voice');
+      document.getElementById('header-hash').textContent         = voice ? '🔊' : '#';
+      document.getElementById('header-channel-name').textContent = ch;
+      document.getElementById('header-channel-desc').textContent = desc;
+      document.querySelectorAll('.content-area').forEach(p => p.classList.add('hidden'));
+      const panel = document.getElementById('content-' + ch);
+      if (panel) {
+        panel.classList.remove('hidden');
+        const scroll = panel.querySelector('.messages-scroll');
+        if (scroll) scroll.scrollTop = scroll.scrollHeight;
+      }
     });
   });
 }
 
 
-const LOUNGE_CONVO = [
-  { staffId: 0, displayName: "Chikamon", time: "10:01 AM", text: "goodluck" },
-  { staffId: 1, displayName: "matcha4latte", time: "10:02 AM", text: "goodluck" },
-  { staffId: 2, displayName: "Yerpiro", time: "10:03 AM", text: "goodluck" },
-  { staffId: 3, displayName: "Finn", time: "10:04 AM", text: "goodluck" },
-  { staffId: 4, displayName: "ManagerAzka:p", time: "10:05 AM", text: "goodluck" },
-  { staffId: 7, displayName: "Wifies", time: "10:08 AM", text: "goodluck" },
-  { staffId: 10, displayName: "AbsoluteZach", time: "10:11 AM", text: "goodluck" },
-  { staffId: 11, displayName: "S0m3tim3", time: "10:12 AM", text: "goodluck" },
-  { staffId: 12, displayName: "Zeen", time: "10:13 AM", text: "goodluck" },
-  { staffId: 13, displayName: "Ray/Ark", time: "10:14 AM", text: "goodluck" },
-  { staffId: 14, displayName: "Randy", time: "10:15 AM", text: "goodluck" },
-  { staffId: 15, displayName: "Matty Matteo", time: "10:16 AM", text: "goodluck" },
-  { staffId: 16, displayName: "Abbie", time: "10:17 AM", text: "goodluck kevy, you will eventually find 'me'." },
-  { staffId: 6, displayName: "Kevy", time: "???", text: "maybe in another universe, i doubt that i will get something from this universe" },
-  { staffId: 6, displayName: "Kevy", time: "???", text: "im tired and everything is making me anxious" },
-];
-
-function buildSillyChannel() {
-  const scroll = document.querySelector('#content-silly-channel .messages-scroll');
-  if (!scroll) return;
-
-  const divider = scroll.querySelector('.chat-date-divider');
-  let el = divider ? divider.nextSibling : null;
-  while (el) { const next = el.nextSibling; scroll.removeChild(el); el = next; }
-
-  LOUNGE_CONVO.forEach(msg => {
-    const group = makeMsgGroup(msg);
-    if (group) scroll.appendChild(group);
-  });
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   buildChatEmbeds();
@@ -616,5 +653,4 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.content-area .messages-scroll').forEach(scroll => {
     scroll.scrollTop = scroll.scrollHeight;
   });
-
 });
