@@ -74,7 +74,7 @@ const staff = [
     bio: "call me by anything.\n If i go offline for a long period of time, dont overthink it too much its gonna hurt u.\n\n\n &lt;/!\\&gt; <a href='https://secreto.site/azzdz7'>https://secreto.site/azzdz7</a>\n &lt;/!\\&gt; <a href='https://absolutekevy.carrd.co/'>https://absolutekevy.carrd.co/</a>",
     joined: "Oct 6, 2025",
     perms: ["Kevy's Notes: just survive alittle longer nobody will know anyway"],
-    spotify: "https://open.spotify.com/track/1c2AFg2WpURtpsOTMr6ZBX?si=94aac33c2f72483f"
+    spotify: "https://open.spotify.com/track/4dTmQfqA75KrfynUF1TUX9?si=7611119dad9742c0"
   },
   {
     id: 7, name: "Wifies", tag: "#0521", role: "headmod", roleLabel: "Yoxxy",
